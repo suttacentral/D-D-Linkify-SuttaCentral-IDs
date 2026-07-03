@@ -1,19 +1,11 @@
 const readInputList = function (action) {
-  if (settings[action.inputListName].trim() === "") {
-    return;
-  }
-  settings[action.inputListName].split("|").forEach((pair) => {
-    if (!pair.includes(",")) {
-      return;
-    }
-    let re = new RegExp(escapeRegExp(settings.regex_substitute_or_character.charAt(0)), "g");
-    let split = pair.replace(re, "|").split(",");
-    let value = split.pop().trim();
-    // We want to allow commas in regexes
-    let word = split.join(",").trim();
-    if (value === "" || word === "") {
-      return;
-    }
+  const list = settings[action.inputListName];
+  if (!list || list.length === 0) return;
+  
+  list.forEach((item) => {
+    let word = item.pattern.trim();
+    let value = item.url.trim();
+    if (word === "" || value === "") return;
     action.inputs[word] = value;
   });
 };

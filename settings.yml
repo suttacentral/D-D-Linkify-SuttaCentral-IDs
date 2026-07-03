@@ -1,8 +1,19 @@
 linked_words:
-  type: list
+  type: objects
   default:
-  - '/(?:DN|Dn|dn)[^\S\r\n]?([1-9]|[12][0-9]|3[0-4])(?:(?!:[0-9]))/, https://suttacentral.net/dn$1/en/sujato'
-  - '/(?:DN|Dn|dn)[^\S\r\n]?(([1-9]|[12][0-9]|3[0-4]))(:[1-9](?:[0-9-]+)?(?:\.[1-9](?:[0-9-]+)?){1,3})/, https://suttacentral.net/dn$1/en/sujato#dn$2$3'
+    - pattern: '/(?:DN|Dn|dn)[^\S\r\n]?([1-9]|[12][0-9]|3[0-4])(?:(?![0-9]))/'
+      url: 'https://suttacentral.net/dn$1/en/sujato'
+    - pattern: '/(?:DN|Dn|dn)[^\S\r\n]?(([1-9]|[12][0-9]|3[0-4]))(:[1-9](?:[0-9-]+)?(?:\.[1-9](?:[0-9-]+)?){1,3})/'
+      url: 'https://suttacentral.net/dn$1/en/sujato#dn$2$3'
+  schema:
+    name: linkify_rule
+    properties:
+      pattern:
+        type: string
+        required: true
+      url:
+        type: string
+        required: true
 excluded_tags:
   type: list
   list_type: compact
