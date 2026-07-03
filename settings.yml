@@ -1,0 +1,23 @@
+linked_words:
+  type: list
+  default:
+  - '/(?:DN|Dn|dn)[^\S\r\n]?([1-9]|[12][0-9]|3[0-4])(?:(?!:[0-9]))/, https://suttacentral.net/dn$1/en/sujato'
+- '/(?:DN|Dn|dn)[^\S\r\n]?(([1-9]|[12][0-9]|3[0-4]))(:[1-9](?:[0-9-]+)?(?:\.[1-9](?:[0-9-]+)?){1,3})/, https://suttacentral.net/dn$1/en/sujato#dn$2$3'
+excluded_tags:
+  type: list
+  list_type: compact
+  default: "code|pre"
+excluded_classes:
+  type: list
+  list_type: compact
+  default: "onebox"
+regex_substitute_or_character:
+  default: "¦"
+left_word_boundary:
+  type: list
+  list_type: compact
+  default: "\\s|:|.|;|,|!|?|…|(|[|{|“|‘|=|—|–|-|/"
+right_word_boundary:
+  type: list
+  list_type: compact
+  default: "\\s|:|.|;|,|!|?|…|}|]|)|”|’|=|—|–|-|/"
