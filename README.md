@@ -21,4 +21,8 @@ Clone the repo
 # Adding new citation patterns
 
 1. All new regex patterns should be added to the [settings.yml](settings.yml) file. CAUTION: YAML files are very fussy with proper spacing. If things are failing, be sure to run your new text through an online [YAML parser](https://yamlchecker.com/)
-2. Under [My Themes](https://discourse.theme-creator.io/my/themes) click on `Check for Updates`
+2. Push your changes to github.
+2. Under [My Themes](https://discourse.theme-creator.io/my/themes) click on `Check for Updates` and then `Update`
+4. Write new tests for whatever citations you are trying to implement including tests that should fail.
+5. Once everything is working, be sure to add your tests to the [test-post.md](test-post.md)
+6. Create a pull request and notify @helpdesk-dd of your changes.
