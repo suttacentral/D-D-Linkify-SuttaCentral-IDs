@@ -1,12 +1,11 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 import { readInputList, traverseNodes } from "../lib/utilities";
 
-  console.log("linkify loaded");
-
 export default {
   name: "discourse-linkify-initializer",
 
   initialize() {
+      console.log("Theme initializer loaded!");
     withPluginApi("0.8.7", (api) => {
       // roughly guided by https://stackoverflow.com/questions/8949445/javascript-bookmarklet-to-replace-text-with-a-link
       let skipTags = {
