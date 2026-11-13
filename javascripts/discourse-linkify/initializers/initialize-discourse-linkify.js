@@ -1,6 +1,11 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 import { readInputList, traverseNodes } from "../lib/utilities";
 
+export default apiInitializer((api) => {
+  console.log("Theme initializer loaded!");
+  api.replaceIcon("category.restricted", "key");
+});
+
 export default {
   name: "discourse-linkify-initializer",
 
